@@ -1,0 +1,95 @@
+/** @format */
+
+.notifications {
+	position: fixed;
+	@include flex(column, flex-end, flex-start);
+	z-index: 1000;
+	right: 20px;
+	top: 100px;
+	height: auto;
+	width: 25%;
+	z-index: 1000;
+	.notification {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: auto;
+		box-shadow: $S_BOX_SHADOW;
+		background: $S_MAIN_COLOR_BLACK;
+		padding: 20px;
+		z-index: 1000;
+		right: -110%;
+		border-radius: 10px;
+		margin-bottom: 10px;
+		transition: ease-in-out 0.2s;
+		@include flex(column, flex-start, flex-start);
+		&.active {
+			right: 0;
+		}
+		&.none {
+			display: none;
+		}
+		> div {
+			&:first-child {
+				position: relative;
+				width: 100%;
+				padding: 0 0 10px 0;
+				margin: 0 0 10px 0;
+				border-bottom: 1px solid #ebeef26b;
+				@include flex(row, center, space-between);
+				> h4 {
+					font-size: $S_FONT_10;
+					text-transform: uppercase;
+					margin-bottom: 0;
+					text-align: right;
+				}
+			}
+			&:nth-child(2) {
+				position: relative;
+				> p {
+					padding: 20px 0;
+					color: $S_MAIN_COLOR_CLIENT;
+					font-size: $S_FONT_12;
+				}
+			}
+		}
+		> span {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0;
+			height: 5px;
+			transition: ease-in-out 4.7s;
+			// background-color: $S_COLOR_BOARD;
+			&.active {
+				width: 100%;
+			}
+		}
+	}
+}
+
+.success {
+	&.img {
+		background-image: url("/public/assets/svg/success.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 24px;
+		height: 24px;
+	}
+	&.color {
+		color: $S_NOTIFICATION_COLOR_SUCCESS;
+	}
+}
+
+.error {
+	&.img {
+		background-image: url("/public/assets/svg/error.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		width: 24px;
+		height: 24px;
+	}
+	&.color {
+		color: $S_NOTIFICATION_COLOR_ERROR;
+	}
+}

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import "./axeptio.module.scss"
 
 export default function Axeptio() {
 

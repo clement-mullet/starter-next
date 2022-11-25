@@ -1,0 +1,33 @@
+/** @format */
+
+$S_MAIN_COLOR_CLIENT: #fff;
+$S_MAIN_COLOR_BLACK: #000;
+$S_NOTIFICATION_COLOR_SUCCESS: #5ade67;
+$S_NOTIFICATION_COLOR_ERROR: #ff6c6c;
+
+$S_BOX_SHADOW: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+	rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+$S_FONT_10: 0.65em;
+$S_FONT_12: 0.75em;
+$S_FONT_14: 0.875em;
+$S_FONT_16: 1em;
+$S_FONT_20: 1.25em;
+
+$S_FONT_32: 2em;
+$S_FONT_48: 3em;
+
+@mixin ellipsis($number) {
+	display: -webkit-box;
+	-webkit-line-clamp: $number;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin flex($direction, $align, $justify) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: $align;
+	justify-content: $justify;
+}
