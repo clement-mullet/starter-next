@@ -11,7 +11,9 @@
 # next.js
 /.next/
 /out/
-
+/prisma/migrations/
+/pages/static/
+/mobile/*
 # production
 /build
 
